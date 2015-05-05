@@ -1,3 +1,10 @@
+Template.registerHelper('getOrders', function(Status)
+{
+	console.log('getOrders:Status' +Status);
+	return  Orders.find({Status: Status});
+
+});
+
 Template.registerHelper('getSettings', function(key)
 {
 	console.log('getSettings:key = ' + key)
