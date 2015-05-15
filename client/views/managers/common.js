@@ -162,6 +162,12 @@ Template.registerHelper('soldOut', function(fontLine)
 
 });
 
+Template.registerHelper('newOrderCount', function()
+{
+	return Orders.find({StatusCode:1}).count();
+
+});
+
 Template.registerHelper('haveDiscount', function()
 {
         var sale_discount   = Settings.findOne({$and : [{Key: "sale_discount"}, {Value : {"$exists" : true, "$ne" : ""}}]});
