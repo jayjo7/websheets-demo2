@@ -150,6 +150,7 @@ Meteor.methods({
 
 			var order = {};
 			order.Status=STATE_ONE;
+			order.StatusCode=STATE_CODE_ONE
 			order.OrderNumber=sequence.orderNumber;
 			order.UniqueId=sequence._id;
 

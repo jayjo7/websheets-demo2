@@ -1,7 +1,7 @@
-Template.registerHelper('getOrders', function(Status)
+Template.registerHelper('getOrders', function(StatusCode)
 {
-	console.log('getOrders:Status' +Status);
-	return  Orders.find({Status: Status});
+	console.log('getOrders:StatusCode' +StatusCode);
+	return  Orders.find({StatusCode: StatusCode});
 
 });
 

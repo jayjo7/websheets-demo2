@@ -8,7 +8,7 @@ Template.confirmation.helpers({
     {
         console.log('isReady:uniqueId = ' + uniqueId);
         var order = Orders.findOne({UniqueId:uniqueId});
-        if(STATE_THREE === order.Status)
+        if(STATE_CODE_THREE === order.StatusCode)
         	return true;
         else
         	return false;
@@ -19,7 +19,7 @@ Template.confirmation.helpers({
     {
         console.log('isDelivered:uniqueId = ' + uniqueId);
         var order = Orders.findOne({UniqueId:uniqueId});
-        if('delivered' === order.Status)
+        if('delivered' === order.StatusCode)
         	return true;
         else
         	return false;
@@ -30,7 +30,7 @@ Template.confirmation.helpers({
     {
         console.log('isInProcess:uniqueId = ' + uniqueId);
         var order = Orders.findOne({UniqueId:uniqueId});
-        if( STATE_TWO === order.Status)
+        if( STATE_CODE_TWO === order.StatusCode)
         	return true;
         else
         	return false;
@@ -41,7 +41,7 @@ Template.confirmation.helpers({
     {
         console.log('isInKitchen:uniqueId = ' + uniqueId);
         var order = Orders.findOne({UniqueId:uniqueId});
-        if( STATE_TWO === order.Status || STATE_FOUR === order.Status || STATE_THREE === order.Status)
+        if( STATE_CODE_TWO === order.StatusCode|| STATE_CODE_FOUR === order.StatusCode || STATE_CODE_THREE === order.StatusCode)
         	return true;
         else
         	return false;
@@ -52,7 +52,7 @@ Template.confirmation.helpers({
     {
         console.log('isSaleComplete:uniqueId = ' + uniqueId);
         var order = Orders.findOne({UniqueId:uniqueId});
-        if( STATE_FOUR === order.Status || STATE_THREE === order.Status)
+        if( STATE_CODE_FOUR === order.StatusCode || STATE_CODE_THREE === order.StatusCode)
         	return true;
         else
         	return false;
@@ -80,12 +80,12 @@ Template.confirmation.helpers({
 		console.log('message:uniqueId = ' + uniqueId);
         var order = Orders.findOne({UniqueId:uniqueId});
         var messageKey='message_confirmation';
-        if(STATE_THREE === order.Status)
+        if(STATE_CODE_THREE === order.StatusCode)
 
         	messageKey = 'message_ready';
         	
         else
-		if(STATE_FOUR === order.Status)
+		if(STATE_CODE_FOUR === order.StatusCode)
 
 			messageKey = 'message_delivered';
 
